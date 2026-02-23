@@ -1,0 +1,3 @@
+#For stats only	
+wwwroot/lib/** linguist-vendored
+wwwroot/js/gsap.min.js linguist-vendored
