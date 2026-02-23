@@ -1,4 +1,5 @@
 #For stats only	
 wwwroot/lib/** linguist-vendored
 wwwroot/js/gsap.min.js linguist-vendored
-*.css linguist-vendored
+*.css linguist-documentation
+*.css linguist-detectable=false
