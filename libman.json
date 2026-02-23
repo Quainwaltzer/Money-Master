@@ -1,0 +1,10 @@
+{
+  "version": "3.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "gsap@3.14.1",
+      "destination": "wwwroot/lib/gsap/"
+    }
+  ]
+}

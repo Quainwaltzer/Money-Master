@@ -1,0 +1,37 @@
+﻿@page "/"
+
+<div class="chat-container">
+    
+
+
+
+    <div class="chat-container-two">
+        @foreach(var msg in _messages){
+
+            var Roles = msg switch
+            {
+                UserChatMessage => "user-side",
+                AssistantChatMessage => "ai-side",
+                _ => "ai-side",
+            };
+
+            <div class="@Roles">
+                <p>@((MarkupString)Markdown.ToHtml(string.Join("", msg.Content.Select(textings => textings.Text))))</p>
+            </div>
+
+            
+        }
+        @if (_isStreaming)
+        {
+            <div class="ai-side popup" @ref="chatContainer">
+                <p>@((MarkupString)Markdown.ToHtml(_streamingText))</p>
+            </div>
+        }
+    </div>
+    
+    <div class="inputs">
+        <textarea @bind="_userInput" @onkeydown="HandleEvent" @onkeydown:preventDefault="shouldPrevent" @bind:event="oninput"></textarea>
+        <button @onclick="StartStreaming">Send</button>
+    </div>
+
+</div>

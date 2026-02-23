@@ -1,0 +1,7 @@
+# .gitignore
+appsettings.Development.json
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
